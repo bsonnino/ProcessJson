@@ -2,12 +2,21 @@
     x:Class="ProcessJson.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ProcessJson"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="MiniBox" Margin="5" AcceptsReturn="True" TextWrapping="Wrap"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Button Width="90" Height="40" Content="Format &gt;&gt;"  Margin="5" Click="FormatJsonClick"/>
+            <Button Width="90" Height="40" Content="&lt;&lt; Minify" Margin="5" Click="MinifyJsonClick"/>
+        </StackPanel>
+        <TextBox x:Name="FormBox" Margin="5" Grid.Column="2" AcceptsReturn="True" TextWrapping="Wrap"/>
     </Grid>
 </Page>
+
